@@ -19,3 +19,23 @@ desc E_mployee1;
 
 alter table E_mployee1 modify (job_id varchar2(20));
 desc E_mployee1;
+
+
+--2. Create a table called EMP with the following structure. Name Type ---------- --------------------- EMPNO NUMBER (6) ENAME VARCHAR2 (20) JOB VARCHAR2 (10) DEPTNO NUMBER (3) SAL NUMBER (7,2)
+--1. Allow NULL for all columns except ename and job.  
+--2. Add constraints to check, while entering the empno value (i.e) empno > 100. 
+--3. Define the field DEPTNO as unique.  
+--4. Create a primary key constraint for the table(EMPNO). 
+--5. Write queries to implement and practice constraints. 
+
+create table E_mp1(empNo number(6),ename varchar2(20)not null,job varchar2(10)not null,deptNo number(3),sal number(7,2));
+desc E_mp1;
+
+alter table E_mp1 add constraints empNo1 check (empNo>100);
+desc E_mp1;
+
+alter table E_mp1 add constraints deptNo1 unique (deptNo);
+desc E_mp1;
+
+alter table E_mp1 modify empNo primary key ;
+desc E_mp1;
