@@ -19,3 +19,17 @@ desc D_kte
 select * from D_kte ;
 update D_kte set CET_P='78.12' where fc_code = '14742';
 
+//New
+
+create table Bank(Branch Varchar(20) ,C_name Char(10) Not null, account_n varchar(10) Unique ,Balanace number(10) , City char(20) ,address varchar(10));
+
+insert into B_ank values('Park Street ','Pushkar','A-978245','12000','Ichalkaranji','_');
+insert into B_ank values('Park Street ','Ram','A-78246','0','Ichalkaranji','_');
+insert into B_ank values('Perryridge ','Pratik','A-97246','10000','Ichalkaranji','_');
+insert into B_ank values('Downtown ','Parth','A-97846','1000000','Ichalkaranji','_');
+insert into B_ank values('Park Street ','Rishabh','A-101','100','Ichalkaranji','_');
+insert into B_ank values('Park Street ','Om','A-215','100','Ichalkaranji','_');
+insert into B_ank values('Park Street ','Shanti','A-981246','90','Ichalkaranji','_');
+
+
+select * from B_ank ;
