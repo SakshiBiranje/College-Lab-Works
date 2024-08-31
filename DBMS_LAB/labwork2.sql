@@ -1,4 +1,5 @@
 --LAB2 PRACTICE ASSIGNMENT:  
+
 --1. Create a table EMPLOYEE with following schema: (Emp_no, E_name, E_address, E_ph_no, Dept_no, Dept_name,Job_id , Salary)  
 --2. Add a new column; HIREDATE to the existing relation.  
 --3. Change the datatype of JOB_ID from char to varchar2.  
