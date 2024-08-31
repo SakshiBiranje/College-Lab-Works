@@ -65,23 +65,41 @@ DELETE FROM Branc_h WHERE branch_name = 'Perryridge';
 DELETE FROM Custome_r WHERE city = 'Downtown';
 
 -- Selecting records
+
 SELECT branch_name, assets FROM Branc_h ;
+
 SELECT * FROM Loa_n WHERE amount > 1000;
+
 SELECT * FROM Accoun_t WHERE balance < 700;
+
 SELECT * FROM Accoun_t WHERE branch_name = 'Perryridge' AND balance < 1000;
+
 SELECT DISTINCT branch_name FROM Loa_n ;
+
 SELECT loan_number FROM Loa_n WHERE branch_name = 'Park Street' AND amount > 10000;
+
 SELECT loan_number FROM Loa_n WHERE amount BETWEEN 10000 AND 50000;
+
 SELECT customer_name FROM Custome_r ;
+
 SELECT DISTINCT branch_name FROM Loa_n ;
+
 SELECT * FROM Branc_h ;
+
 SELECT account_number FROM Accoun_t WHERE balance > 700;
+
 SELECT account_number, balance FROM Accoun_t WHERE branch_name = 'Brighton' AND balance > 800;
+
 SELECT branch_name, assets / 1000 AS "assets in thousands" FROM Branc_h ;
+
 SELECT branch_name FROM Branc_h WHERE assets BETWEEN 1000000 AND 4000000;
+
 SELECT customer_name FROM Custome_r WHERE street LIKE '%Main%';
+
 SELECT * FROM Accoun_t WHERE branch_name LIKE 'C_a%';
+
 SELECT * FROM Accoun_t WHERE branch_name LIKE '_a%' AND LENGTH(branch_name) >= 3;
+
 SELECT loan_number FROM Loa_n WHERE amount IS NULL;
 
 
