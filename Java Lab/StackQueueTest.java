@@ -8,6 +8,7 @@ interface Stack
     void displayStack();
 }
 
+
 // Define the QueueInterface
 interface Queue 
 {
