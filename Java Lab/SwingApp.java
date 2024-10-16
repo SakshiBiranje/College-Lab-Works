@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 public class SwingApp {
     SwingApp(){
         JFrame F = new JFrame();
