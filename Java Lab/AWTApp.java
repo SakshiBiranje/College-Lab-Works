@@ -1,7 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class AWTApp extends Frame {
+public class AWTApp extends Frame 
+{
     AWTApp() {
         
         // Create labels
