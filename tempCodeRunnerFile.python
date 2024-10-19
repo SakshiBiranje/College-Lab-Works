@@ -1,0 +1,67 @@
+import cv2
+import numpy as np
+import tensorflow as tf
+import mediapipe as mp
+
+# Load the pre-trained model (substitute with your own model path)
+model = tf.keras.models.load_model('path_to_your_model.h5')
+
+# Mediapipe for hand detection
+mp_hands = mp.solutions.hands
+mp_drawing = mp.solutions.drawing_utils
+hands = mp_hands.Hands(max_num_hands=1)
+
+# Start video capture
+cap = cv2.VideoCapture(0)
+
+# Define a function to preprocess input for the model
+def preprocess_image(image):
+    # Resize the image to the input shape of the model
+    image_resized = cv2.resize(image, (64, 64))
+    image_resized = np.expand_dims(image_resized, axis=0)  # Add batch dimension
+    image_resized = image_resized / 255.0  # Normalize pixel values
+    return image_resized
+
+while cap.isOpened():
+    success, frame = cap.read()
+    if not success:
+        print("Ignoring empty camera frame.")
+        continue
+
+    # Flip the image horizontally for a mirrored view
+    frame = cv2.flip(frame, 1)
+    
+    # Convert the image to RGB
+    image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    
+    # Detect hands in the frame
+    results = hands.process(image_rgb)
+    
+    if results.multi_hand_landmarks:
+        for hand_landmarks in results.multi_hand_landmarks:
+            # Draw the hand annotations on the frame
+            mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            
+            # Extract hand landmark coordinates
+            hand_landmark_array = np.array([[landmark.x, landmark.y, landmark.z] for landmark in hand_landmarks.landmark])
+
+            # Crop or extract the hand region from the frame for classification
+            # In this example, we pass the entire frame (customize as needed)
+            input_image = preprocess_image(frame)
+            
+            # Predict the gesture using the model
+            prediction = model.predict(input_image)
+            predicted_class = np.argmax(prediction)
+            
+            # Display the prediction on the frame
+            cv2.putText(frame, f'Predicted Sign: {predicted_class}', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+
+    # Display the resulting frame
+    cv2.imshow('Sign Language Detection', frame)
+    
+    if cv2.waitKey(10) & 0xFF == ord('q'):
+        break
+
+# Release the capture when done
+cap.release()
+cv2.destroyAllWindows()
