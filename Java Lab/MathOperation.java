@@ -6,10 +6,9 @@ class MyException extends Exception {
         super(message);
     }
 }
-
 // MathOperation class performing arithmetic operations with custom exceptions
-public class MathOperation {
-
+public class MathOperation 
+{
     // Method for addition with custom exception handling
     public static int add(int a, int b) throws MyException {
         int result = a + b;
