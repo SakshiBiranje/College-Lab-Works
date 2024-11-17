@@ -3,8 +3,8 @@ import java.awt.event.*;
 
 public class AWTApp extends Frame 
 {
-    AWTApp() {
-        
+    AWTApp()
+    {
         // Create labels
         JLabel firstNameLabel = new JLabel("First Name");
         firstNameLabel.setBounds(50, 50, 80, 20);
@@ -55,7 +55,6 @@ public class AWTApp extends Frame
             }
         });
     }
-
     public static void main(String[] args) {
         new AWTApp();
     }
