@@ -1,5 +1,4 @@
 // java exp1- 22UAI011
-
 import java.util.Scanner;
 
  public class Experiment1
@@ -13,19 +12,23 @@ import java.util.Scanner;
         int year = sc.nextInt();
         
         int month_days[] ={0,31,28,31,30,31,30,31,31,30,31,30,31};
-        if((year%4==0 && year%100!=0) || (year%400==0)){
+        if((year%4==0 && year%100!=0) || (year%400==0))
+        {
             month_days[2]=29;
         }
-        if((month<1)||(month>12)){
+        if((month<1)||(month>12))
+        {
             System.out.println("Invalid date : Month must be in between 1 to 12");
             return;
         }
-        if((date<1)||(date>month_days[month])){
+        if((date<1)||(date>month_days[month]))
+        {
             System.out.println("Invalid date :Month days should be according to month ");
             return;
         }
         int passed_days = date;
-        for(int i=1;i<month;i++){
+        for(int i=1;i<month;i++)
+        {
             passed_days +=month_days[i];
             
         }
