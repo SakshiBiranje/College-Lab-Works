@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class Experiment4 {
+public class Experiment4 
+{
     // Inner class representing a Savings Account
     public static class SavingsAccount {
         // Static variable for the annual interest rate
@@ -22,7 +23,6 @@ public class Experiment4 {
                 System.out.println("Interest rate cannot be negative.");
             }
         }
-
         // Method to calculate monthly interest and add it to the savings balance
         public void calculateMonthlyInterest() {
             double monthlyInterest = (savingsBalance * annualInterestRate) / 12;
