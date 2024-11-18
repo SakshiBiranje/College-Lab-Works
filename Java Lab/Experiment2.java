@@ -27,6 +27,7 @@ public class Experiment2
 
         // Input elements for the second matrix
         System.out.println("Enter the elements of the second matrix:");
+        
         for (int i = 0; i < rows; i++) 
 {
             for (int j = 0; j < cols; j++) 
