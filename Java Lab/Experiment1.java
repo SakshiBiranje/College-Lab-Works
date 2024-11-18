@@ -27,13 +27,16 @@ import java.util.Scanner;
             return;
         }
         int passed_days = date;
+        
         for(int i=1;i<month;i++)
         {
             passed_days +=month_days[i];
             
         }
+
         int total_days = (year-1)*365+(year-1)/4-(year-1)/100+(year-1)/400+passed_days;
         int t_odddays = total_days % 7 ;
+
         System.out.println("the odd days are " +t_odddays);
         switch(t_odddays)
         {
