@@ -1,6 +1,10 @@
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
+import java.util.*;
 public class AWTApp extends Frame 
 {
     AWTApp()
