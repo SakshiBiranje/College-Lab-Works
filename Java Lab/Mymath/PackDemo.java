@@ -29,6 +29,7 @@ public class PackDemo {
         System.out.println("Multiplication: " + arithmetic.multiply(a, b));
         System.out.println("Division: " + arithmetic.divide(a, b));
 
+
         // Statistical operations
         System.out.print("Enter the number of data points for statistical calculations: ");
         int count = scanner.nextInt();
@@ -38,7 +39,7 @@ public class PackDemo {
         for (int i = 0; i < count; i++) {
             data[i] = scanner.nextFloat();
         }
-
+        
         Stat stat = new Stat(data);
         System.out.println("Min: " + stat.min());
         System.out.println("Max: " + stat.max());
