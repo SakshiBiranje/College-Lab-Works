@@ -11,6 +11,7 @@ public class Program5 {
              a = sc.nextDouble();  
             
         }
+        
         System.out.println("Not double value error");
         
         System.out.println("Enter the second value : ");
