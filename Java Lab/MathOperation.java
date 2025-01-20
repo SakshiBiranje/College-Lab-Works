@@ -1,15 +1,14 @@
 import java.util.Scanner;
 
-// Custom exception class extending Exception
+
 class MyException extends Exception {
     MyException(String message) {
         super(message);
     }
 }
-// MathOperation class performing arithmetic operations with custom exceptions
 public class MathOperation 
 {
-    // Method for addition with custom exception handling
+    
     public static int add(int a, int b) throws MyException {
         int result = a + b;
         if (result > 1000) {
@@ -18,7 +17,7 @@ public class MathOperation
         return result;
     }
 
-    // Method for subtraction with custom exception handling
+  
     public static int subtract(int a, int b) throws MyException {
         int result = a - b;
         if (result < 0) {
@@ -27,7 +26,7 @@ public class MathOperation
         return result;
     }
 
-    // Method for multiplication with custom exception handling
+   
     public static int multiply(int a, int b) throws MyException {
         int result = a * b;
         if (result > 5000) {
@@ -36,7 +35,7 @@ public class MathOperation
         return result;
     }
 
-    // Method for division
+    
     public static int divide(int a, int b) throws ArithmeticException {
         if (b == 0) {
             throw new ArithmeticException("Division by zero is not allowed.");
@@ -44,17 +43,15 @@ public class MathOperation
         return a / b;
     }
 
-    // Main method
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         try {
-            // Asking for user input
+           
             System.out.print("Enter first number: ");
             int num1 = scanner.nextInt();
             System.out.print("Enter second number: ");
             int num2 = scanner.nextInt();
 
-            // Menu for choosing an operation
             System.out.println("Choose an operation:");
             System.out.println("1. Add");
             System.out.println("2. Subtract");
@@ -63,7 +60,7 @@ public class MathOperation
 
             int choice = scanner.nextInt();
 
-            // Perform the selected operation
+          
             switch (choice) {
                 case 1:
                     int additionResult = add(num1, num2);
