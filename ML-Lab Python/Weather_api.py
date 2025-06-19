@@ -1,5 +1,6 @@
 import json
 import requests 
+
 #api to fetch temperature of city
 city_name = input("Enter city name : ")
 api_key='a7e1e4e71e8450ab10eda91b1df2114c'
