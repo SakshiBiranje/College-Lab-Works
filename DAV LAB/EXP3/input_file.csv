@@ -1,0 +1,11 @@
+ProductID,Category,ProductName,Price,Stock
+1,Electronics,Smartphone,15000,25
+2,Electronics,Laptop,,10
+3,Clothing,,800,100
+4,Clothing,Jeans,1500,
+5,Groceries,Rice,50,500
+6,Groceries,,40,300
+7,Electronics,Headphones,,45
+8,Clothing,Jacket,2500,20
+9,Groceries,Tea,120,
+10,Electronics,Smartwatch,5000,30
