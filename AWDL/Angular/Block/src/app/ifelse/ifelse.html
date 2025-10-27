@@ -1,0 +1,12 @@
+
+<div *ngIf="true; else elseBlock1">
+  <p>Condition 1 is true</p>
+</div>
+<ng-template #elseBlock1>
+  <div *ngIf="true; else elseBlock2">
+    <p>Condition 1 is false, but Condition 2 is true</p>
+  </div>
+  <ng-template #elseBlock2>
+    <p>Both Condition 1 and Condition 2 are false</p>
+  </ng-template>
+</ng-template>  
