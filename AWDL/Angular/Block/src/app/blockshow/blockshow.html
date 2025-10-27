@@ -1,0 +1,48 @@
+<div class="container">
+
+  <!-- Block 1 -->
+  <div class="block">
+    <h3>Block 1: Show / Hide Name</h3>
+    <button (click)="showName()">Show</button>
+    <button (click)="hideName()">Hide</button>
+    <p *ngIf="isNameVisible">{{ myName }}</p>
+  </div>
+
+  <!-- Block 2 -->
+  <div class="block">
+    <h3>Block 2: Toggle Button</h3>
+    <button (click)="toggleState()">{{ toggleText }}</button>
+    <p>State: {{ toggleText }}</p>
+  </div>
+
+  <!-- Block 3 -->
+  <div class="block">
+    <h3>Block 3: Number Comparison</h3>
+    <button (click)="showNum1Input = !showNum1Input">Num1</button>
+    <button (click)="showNum2Input = !showNum2Input">Num2</button>
+
+    <div *ngIf="showNum1Input">
+      <input type="number" [(ngModel)]="num1" placeholder="Enter Number 1">
+    </div>
+    <div *ngIf="showNum2Input">
+      <input type="number" [(ngModel)]="num2" placeholder="Enter Number 2">
+    </div>
+
+    <div *ngIf="num1 !== null && num2 !== null">
+      <p *ngIf="num1 === num2">✅ Equal</p>
+      <p *ngIf="num1 !== num2">❌ Different</p>
+    </div>
+  </div>
+
+  <!-- Block 4 -->
+  <div class="block">
+    <h3>Block 4: Dropdown</h3>
+    <select [(ngModel)]="selectedOption">
+      <option value="" disabled selected>Select an option</option>
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+    <p *ngIf="selectedOption">You selected: {{ selectedOption }}</p>
+  </div>
+
+</div>
+
