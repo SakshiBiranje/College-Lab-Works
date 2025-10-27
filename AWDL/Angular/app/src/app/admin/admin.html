@@ -1,0 +1,16 @@
+<div>
+    {{name}}
+    {{date}}
+</div>
+<div>
+    <h1 [innerText]="age"></h1>
+<input type="text" [value]="age" placeholder="Enter number"/>
+</div>
+<div>
+    <button (click)="onClick()">Click Me</button>
+    <p>{{ message }}</p>
+</div>
+<div>
+    <input [(ngModel)]="age" placeholder="Enter your name" />
+
+</div>
