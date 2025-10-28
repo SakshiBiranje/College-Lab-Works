@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Interpolation -->
+    <h1>My name is {{name}}</h1>
+    <!-- Properties -->
+    <input type="text" [value]="rollno">
+    <!-- event -->
+    <input #userName type="text" placeholder="Enter name">
+    <button (click)="showName(userName.value)">Show Name</button>
+     <!-- two way binding -->
+     <div *ngif="Isactive">
+        <h1>Div1</h1>
+     </div>
+</body>
+</html>
