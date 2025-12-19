@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "figlet": "^1.9.3",
+    "random-words": "^2.0.1"
+  },
+  "name": "experiment1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "22UAI011_Experiment1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

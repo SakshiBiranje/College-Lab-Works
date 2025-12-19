@@ -1,0 +1,14 @@
+<h2>Student List</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Course</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{ student.id }}</td>
+    <td>{{ student.name }}</td>
+    <td>{{ student.course }}</td>
+  </tr>
+</table>
+<router-outlet></router-outlet>

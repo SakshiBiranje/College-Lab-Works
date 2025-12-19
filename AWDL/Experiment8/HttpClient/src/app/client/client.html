@@ -1,0 +1,22 @@
+<h2>Select a User</h2>
+
+<select (change)="onUserSelect($event)">
+  <option value="">-- Choose User --</option>
+  <option *ngFor="let user of users" [value]="user.id">
+    {{ user.name }} ({{ user.username }})
+  </option>
+</select>
+<div *ngIf="selectedUser">
+  <h3>User Details</h3>
+  <p><strong>Name:</strong> {{ selectedUser.name }}</p>
+  <p><strong>Username:</strong> {{ selectedUser.username }}</p>
+  <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+  <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
+  <p><strong>Website:</strong> {{ selectedUser.website }}</p>
+  <p><strong>Company:</strong> {{ selectedUser.company?.name }}</p>
+  <p><strong>Address:</strong> 
+    {{ selectedUser.address?.suite }}, 
+    {{ selectedUser.address?.street }}, 
+    {{ selectedUser.address?.city }} - 
+    {{ selectedUser.address?.zipcode }}
+  </p>

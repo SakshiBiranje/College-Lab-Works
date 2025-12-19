@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Data</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #4CAF50; color: white; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <h2>Employee Data (100 Records)</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Job Title</th>
+      <th>Department</th>
+      <th>Salary</th>
+    </tr>
+    <% employees.forEach(emp => { %>
+      <tr>
+        <td><%= emp.id %></td>
+        <td><%= emp.name %></td>
+        <td><%= emp.email %></td>
+        <td><%= emp.job_title %></td>
+        <td><%= emp.department %></td>
+        <td><%= emp.salary %></td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

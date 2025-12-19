@@ -1,0 +1,67 @@
+<div class="form-container">
+  <h2>Student Registration Form</h2>
+
+  <form [formGroup]="studentForm" >
+
+    <!-- First Name -->
+    <div class="form-group">
+        <p *ngIf="isSubmitted" class="success-message">✅ Form submitted successfully!</p>
+      <label>First Name:</label>
+      <input type="text" required formControlName="firstname" />
+    </div>
+    <div class="text-danger">
+        <div *ngIf="studentForm.get('firstname')?.touched && studentForm.get('firstname')?.hasError('required')">
+            First Name is required.
+        </div>
+        <div *ngIf="studentForm.get('firstname')?.touched && studentForm.get('firstname')?.hasError('minlength')">
+            First Name must be at least 3 characters long.
+        </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+      <label>Last Name:</label>
+      <input type="text" required formControlName="lastname" />
+    </div>
+
+    <!-- Username -->
+    <div class="form-group">
+      <label>Username:</label>
+      <input type="text" required formControlName="username" />
+    </div>
+
+    <!-- City -->
+    <div class="form-group">
+      <label>City:</label>
+      <input type="text" required formControlName="city" />
+    </div>
+
+    <!-- State -->
+    <div class="form-group">
+      <label>State:</label>
+      <input type="text" required formControlName="state" />
+    </div>
+
+    <!-- Zip -->
+    <div class="form-group">
+      <label>Zip:</label>
+      <input type="text" required formControlName="zip" />
+    </div>
+
+    <!-- Checkbox -->
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="agree" />I agree to the terms
+      </label>
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-buttons">
+      <button type="submit" (click)="OnSubmit()">Submit</button>
+      <button type="button" (click)="OnReset()">Reset</button>
+    </div>
+  </form>
+
+  <!-- Success Message -->
+
+</div>

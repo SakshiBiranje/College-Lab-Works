@@ -1,0 +1,20 @@
+<h2>Find Student</h2>
+
+<input type="text" [(ngModel)]="query" placeholder="Enter ID or Name">
+<button (click)="search()">Search</button>
+
+<!-- ✅ Block 1: Student found -->
+<div *ngIf="student">
+  <h3>Student Details</h3>
+  <p><b>ID:</b> {{ student.id }}</p>
+  <p><b>Name:</b> {{ student.name }}</p>
+  <p><b>Age:</b> {{ student.age }}</p>
+  <p><b>Course:</b> {{ student.course }}</p>
+  <p><b>Email:</b> {{ student.email }}</p>
+  <p><b>Address:</b> {{ student.address }}</p>
+</div>
+
+<!-- ✅ Block 2: No student found -->
+<div *ngIf="!student && query">
+  <p style="color:red;">⚠️ No student found!</p>
+</div>
